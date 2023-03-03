@@ -1,0 +1,28 @@
+{
+  "descriptionHash": "D248431915728CB81749B59E37176ED8BDAA423C9785ED834228CD132BDA8DF459D78E5340FD51BD3FD4A7D3235BFF62B7E31CB06A32DACC77D82C5C6E57BA23",
+  "descriptionLocation": "/Users/markweitzel/gitrepos/apipatterns/todo-python-mongo/spec/./openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "0.8.3.0",
+  "clientClassName": "ApiClient",
+  "clientNamespaceName": "ApiSdk",
+  "language": "Python",
+  "usesBackingStore": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "application/xml",
+    "text/plain",
+    "text/xml",
+    "text/yaml"
+  ],
+  "includePatterns": [],
+  "excludePatterns": []
+}

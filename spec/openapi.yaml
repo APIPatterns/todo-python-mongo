@@ -1,0 +1,402 @@
+openapi: 3.0.0
+info:
+  title: Simple Todo API
+  version: 3.0.0
+  description: Simple Todo API
+tags:
+  - name: Lists
+  - name: Items
+paths:
+  /lists:
+    get:
+      tags:
+        - Lists
+      operationId: GetLists
+      summary: Gets an array of Todo lists
+      parameters:
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TodoList'
+                x-cadl-name: TodoList[]
+    post:
+      tags:
+        - Lists
+      operationId: CreateList
+      summary: Creates a new Todo list
+      parameters: []
+      responses:
+        '201':
+          description: A Todo list result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoList'
+        '400':
+          description: Invalid request schema
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoList'
+  /lists/{listId}:
+    get:
+      tags:
+        - Lists
+      operationId: GetListById
+      summary: Gets a Todo list by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoList'
+        '404':
+          description: Todo list not found
+    put:
+      tags:
+        - Lists
+      operationId: UpdateListById
+      summary: Updates a Todo list by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoList'
+        '400':
+          description: Todo list is invalid
+        '404':
+          description: Todo list not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoList'
+    delete:
+      tags:
+        - Lists
+      operationId: DeleteListById
+      summary: Deletes a Todo list by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        '204':
+          description: Todo list deleted successfully
+        '404':
+          description: Todo list not found
+  /lists/{listId}/items:
+    get:
+      tags:
+        - Items
+      operationId: GetItemsByListId
+      summary: Gets Todo items within the specified list
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TodoItem'
+                x-cadl-name: TodoItem[]
+        '404':
+          description: Todo list not found
+    post:
+      tags:
+        - Items
+      operationId: CreateItem
+      summary: Creates a new Todo item within a list
+      parameters:
+        - $ref: '#/components/parameters/listId'
+      responses:
+        '201':
+          description: A Todo item result
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoItem'
+        '404':
+          description: Todo list not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoItem'
+  /lists/{listId}/items/state/{state}:
+    get:
+      tags:
+        - Items
+      operationId: GetItemsByListIdAndState
+      summary: Gets a list of Todo items of a specific state
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/state'
+        - $ref: '#/components/parameters/top'
+        - $ref: '#/components/parameters/skip'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TodoItem'
+                x-cadl-name: TodoItem[]
+        '404':
+          description: Todo list not found
+    put:
+      tags:
+        - Items
+      operationId: UpdateItemsStateByListId
+      summary: Changes the state of the specified list items
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/state'
+      responses:
+        '204':
+          description: Todo items updated
+        '400':
+          description: Update request is invalid
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: '#/components/schemas/itemIdType'
+              x-cadl-name: itemIdType[]
+  /lists/{listId}/items/{itemId}:
+    get:
+      tags:
+        - Items
+      operationId: GetItemById
+      summary: Gets a Todo item by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoItem'
+        '404':
+          description: Todo list or item not found
+    put:
+      tags:
+        - Items
+      operationId: UpdateItemById
+      summary: Updates a Todo item by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        '200':
+          description: The request has succeeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TodoItem'
+        '400':
+          description: Todo item is invalid
+        '404':
+          description: Todo list or item not found
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoItem'
+    delete:
+      tags:
+        - Items
+      operationId: DeleteItemById
+      summary: Deletes a Todo item by unique identifier
+      parameters:
+        - $ref: '#/components/parameters/listId'
+        - $ref: '#/components/parameters/itemId'
+      responses:
+        '204':
+          description: Todo item deleted successfully
+        '404':
+          description: Todo list or item not found
+components:
+  parameters:
+    itemId:
+      name: itemId
+      in: path
+      required: true
+      description: The Todo item unique identifier
+      schema:
+        type: string
+    listId:
+      name: listId
+      in: path
+      required: true
+      description: The Todo list unique identifier
+      schema:
+        type: string
+    skip:
+      name: skip
+      in: query
+      required: false
+      description: The number of items to skip within the results
+      schema:
+        default: 0
+    state:
+      name: state
+      in: path
+      required: true
+      description: The Todo item state
+      schema:
+        type: string
+        enum:
+          - todo
+          - inprogress
+          - done
+    top:
+      name: top
+      in: query
+      required: false
+      description: The max number of items to returns in a result
+      schema:
+        default: 20
+  schemas:
+    BadRequest:
+      type: object
+      properties: {}
+      description: Invalid request schema
+    ItemCreated:
+      type: object
+      properties:
+        body:
+          $ref: '#/components/schemas/TodoItem'
+      description: A Todo item result
+      required:
+        - body
+    ItemDeleted:
+      type: object
+      properties: {}
+      description: Todo item deleted successfully
+    ItemIdParams:
+      type: object
+      properties: {}
+    ItemNotValid:
+      type: object
+      properties: {}
+      description: Todo item is invalid
+    ItemsUpdated:
+      type: object
+      properties: {}
+      description: Todo items updated
+    ListCreated:
+      type: object
+      properties:
+        body:
+          $ref: '#/components/schemas/TodoList'
+      description: A Todo list result
+      required:
+        - body
+    ListDeleted:
+      type: object
+      properties: {}
+      description: Todo list deleted successfully
+    ListNotFound:
+      type: object
+      properties: {}
+      description: Todo list not found
+    ListNotValid:
+      type: object
+      properties: {}
+      description: Todo list is invalid
+    ListOrItemNotFound:
+      type: object
+      properties: {}
+      description: Todo list or item not found
+    ListParams:
+      type: object
+      properties: {}
+    TodoItem:
+      type: object
+      properties:
+        id:
+          type: string
+        listId:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        state:
+          $ref: '#/components/schemas/TodoState'
+        dueDate:
+          type: string
+          format: date-time
+        completedDate:
+          type: string
+          format: date-time
+      description: A task that needs to be completed
+      required:
+        - listId
+        - name
+        - description
+    TodoList:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+      description: ' A list of related Todo items'
+      required:
+        - name
+    TodoState:
+      type: string
+      enum:
+        - todo
+        - inprogress
+        - done
+    UpdateNotValid:
+      type: object
+      properties: {}
+      description: Update request is invalid
+    itemId:
+      type: object
+      properties: {}
+    itemIdType:
+      type: string
+      description: ' The Todo item unique identifier'
+    listId:
+      type: object
+      properties: {}
+    skip:
+      type: object
+      properties: {}
+    state:
+      type: object
+      properties: {}
+    top:
+      type: object
+      properties: {}

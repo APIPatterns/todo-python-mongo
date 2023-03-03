@@ -1,0 +1,173 @@
+import "@cadl-lang/rest";
+import "@cadl-lang/openapi";
+
+using Cadl.Http;
+using OpenAPI;
+
+@doc("Simple Todo API")
+@service({
+  title: "Simple Todo API",
+  version: "3.0.0",
+})
+namespace TodoService;
+
+// Schemas
+
+enum TodoState {
+  "todo",
+  "inprogress",
+  "done"
+}
+
+@doc("A task that needs to be completed")
+model TodoItem {
+  id?: string;
+  listId: string;
+  name: string;
+  description: string;
+  state?: TodoState;
+  dueDate?: zonedDateTime;
+  completedDate?: zonedDateTime;
+}
+
+@doc(" A list of related Todo items")
+model TodoList {
+  id?: string;
+  name: string;
+  description?: string;
+}
+
+@doc(" The Todo item unique identifier")
+scalar itemIdType extends string;
+
+// Parameters
+
+model listId {
+  @doc("The Todo list unique identifier")
+  @path
+  listId: string;
+}
+
+model itemId {
+  @doc("The Todo item unique identifier")
+  @path
+  itemId: string;
+}
+
+model state {
+  @doc("The Todo item state")
+  @path
+  state: TodoState;
+}
+
+model skip {
+  @doc("The number of items to skip within the results")
+  @query
+  skip?: numeric = 0;
+}
+
+model top {
+  @doc("The max number of items to returns in a result")
+  @query
+  top?: numeric = 20;
+}
+
+model ItemIdParams {
+  ...listId;
+  ...itemId;
+}
+
+model ListParams {
+  ...top;
+  ...skip;
+}
+
+// Responses
+
+@doc("A Todo list result")
+model ListCreated is Response<201>{
+  @body body: TodoList;
+}
+
+@doc("A Todo item result")
+model ItemCreated is Response<201>{
+  @body body: TodoItem;
+}
+
+@doc("Invalid request schema")
+model BadRequest is Response<400> {}
+
+@doc("Todo list is invalid")
+model ListNotValid is Response<400> {}
+
+@doc("Update request is invalid")
+model UpdateNotValid is Response<400> {}
+
+@doc("Todo item is invalid")
+model ItemNotValid is Response<400> {}
+
+@doc("Todo list not found")
+model ListNotFound is Response<404> {}
+
+@doc("Todo list deleted successfully")
+model ListDeleted is Response<204> {}
+
+@doc("Todo list or item not found")
+model ListOrItemNotFound is Response<404> {}
+
+@doc("Todo item deleted successfully")
+model ItemDeleted is Response<204> {}
+
+@doc("Todo items updated")
+model ItemsUpdated is Response<204> {}
+
+// Operations
+
+@route("/lists")
+@tag("Lists")
+interface Lists {
+  @summary("Gets an array of Todo lists")
+  @operationId("GetLists")
+  @get GetLists(...ListParams): TodoList[];
+  @summary("Creates a new Todo list")
+  @operationId("CreateList")
+  @post CreateList(...TodoList): ListCreated | BadRequest;
+  @summary("Gets a Todo list by unique identifier")
+  @operationId("GetListById")
+  @get GetListById(...listId): TodoList | ListNotFound;
+  @summary("Updates a Todo list by unique identifier")
+  @operationId("UpdateListById")
+  @put UpdateListById(...listId, @body _: TodoList): TodoList | ListNotValid | ListNotFound;
+  @summary("Deletes a Todo list by unique identifier")
+  @operationId("DeleteListById")
+  @delete DeleteListById(...listId): ListDeleted | ListNotFound;
+}
+
+@route("/lists/{listId}/items")
+@tag("Items")
+interface Items {
+  @summary("Gets Todo items within the specified list")
+  @operationId("GetItemsByListId")
+  @get GetItemsByListId(...listId, ...ListParams): TodoItem[] | ListNotFound;
+  @summary("Creates a new Todo item within a list")
+  @operationId("CreateItem")
+  @post CreateItem(...listId, @body _: TodoItem): ItemCreated | ListNotFound;
+  @summary("Gets a Todo item by unique identifier")
+  @operationId("GetItemById")
+  @get GetItemById(...ItemIdParams): TodoItem | ListOrItemNotFound;
+  @summary("Updates a Todo item by unique identifier")
+  @operationId("UpdateItemById")
+  @put UpdateItemById( ...ItemIdParams, @body _: TodoItem): TodoItem | ItemNotValid | ListOrItemNotFound;
+  @summary("Deletes a Todo item by unique identifier")
+  @operationId("DeleteItemById")
+  @delete DeleteItemById(...ItemIdParams): ItemDeleted | ListOrItemNotFound;
+  // state
+  @route("/state/{state}")
+  @operationId("GetItemsByListIdAndState")
+  @summary("Gets a list of Todo items of a specific state")
+  @get GetItemsByListIdAndState(...listId, ...state, ...ListParams): TodoItem[] | ListNotFound;
+  @route("/state/{state}")
+  @summary("Changes the state of the specified list items")
+  @operationId("UpdateItemsStateByListId")
+  @put UpdateItemsStateByListId(...listId, ...state, @body _:itemIdType[]): ItemsUpdated | UpdateNotValid;
+}
