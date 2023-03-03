@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "BqJXE3QEj8lH7imhZ0R+9ElOsaeKmA5X50OsXIB0ImUTMWU/ToKH2HtaSJvjTUdxTdNy6L5CAmdNlYkCqVMwLg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\csharp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\darrmi\\.nuget\\packages\\microsoft.kiota.abstractions\\1.0.0-rc.7\\microsoft.kiota.abstractions.1.0.0-rc.7.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\microsoft.kiota.http.httpclientlibrary\\1.0.0-rc.6\\microsoft.kiota.http.httpclientlibrary.1.0.0-rc.6.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\microsoft.kiota.serialization.form\\1.0.0-rc.4\\microsoft.kiota.serialization.form.1.0.0-rc.4.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\microsoft.kiota.serialization.json\\1.0.0-rc.3\\microsoft.kiota.serialization.json.1.0.0-rc.3.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\microsoft.kiota.serialization.text\\1.0.0-rc.3\\microsoft.kiota.serialization.text.1.0.0-rc.3.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\system.diagnostics.diagnosticsource\\7.0.0\\system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\system.text.encodings.web\\7.0.0\\system.text.encodings.web.7.0.0.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\system.text.json\\7.0.1\\system.text.json.7.0.1.nupkg.sha512",
+    "C:\\Users\\darrmi\\.nuget\\packages\\tavis.uritemplates\\2.0.0\\tavis.uritemplates.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

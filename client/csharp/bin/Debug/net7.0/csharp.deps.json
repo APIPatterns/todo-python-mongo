@@ -1,0 +1,173 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "csharp/1.0.0": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.0.0-rc.7",
+          "Microsoft.Kiota.Http.HttpClientLibrary": "1.0.0-rc.6",
+          "Microsoft.Kiota.Serialization.Form": "1.0.0-rc.4",
+          "Microsoft.Kiota.Serialization.Json": "1.0.0-rc.3",
+          "Microsoft.Kiota.Serialization.Text": "1.0.0-rc.3"
+        },
+        "runtime": {
+          "csharp.dll": {}
+        }
+      },
+      "Microsoft.Kiota.Abstractions/1.0.0-rc.7": {
+        "dependencies": {
+          "System.Diagnostics.DiagnosticSource": "7.0.0",
+          "Tavis.UriTemplates": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Kiota.Abstractions.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Http.HttpClientLibrary/1.0.0-rc.6": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.0.0-rc.7",
+          "System.Diagnostics.DiagnosticSource": "7.0.0",
+          "System.Text.Json": "7.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Kiota.Http.HttpClientLibrary.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Form/1.0.0-rc.4": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.0.0-rc.7"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Kiota.Serialization.Form.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Json/1.0.0-rc.3": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.0.0-rc.7",
+          "System.Text.Json": "7.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Kiota.Serialization.Json.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "Microsoft.Kiota.Serialization.Text/1.0.0-rc.3": {
+        "dependencies": {
+          "Microsoft.Kiota.Abstractions": "1.0.0-rc.7"
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Kiota.Serialization.Text.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "System.Diagnostics.DiagnosticSource/7.0.0": {},
+      "System.Text.Encodings.Web/7.0.0": {},
+      "System.Text.Json/7.0.1": {
+        "dependencies": {
+          "System.Text.Encodings.Web": "7.0.0"
+        },
+        "runtime": {
+          "lib/net7.0/System.Text.Json.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.0.122.56804"
+          }
+        }
+      },
+      "Tavis.UriTemplates/2.0.0": {
+        "runtime": {
+          "lib/netstandard2.0/Tavis.UriTemplates.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "csharp/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Kiota.Abstractions/1.0.0-rc.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RccZfwTjk/MCLtaV3N3C1u1Eh6NO0RZJ64zpJ2YkfJfr6pjrOJfhx8QVL8jGN8MToQ7gjZe8AjTvOnON5f+g7g==",
+      "path": "microsoft.kiota.abstractions/1.0.0-rc.7",
+      "hashPath": "microsoft.kiota.abstractions.1.0.0-rc.7.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Http.HttpClientLibrary/1.0.0-rc.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VWK7d+WTwZ6r9FUaaoazim5Dmz0fPqe4nGoDh5iI8QCweok3wT7BE0h8UX2tVwg9HNE/Yz37XIkNtXPkf1d6iA==",
+      "path": "microsoft.kiota.http.httpclientlibrary/1.0.0-rc.6",
+      "hashPath": "microsoft.kiota.http.httpclientlibrary.1.0.0-rc.6.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Form/1.0.0-rc.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6mtoFqxn4Jt6wgNlkJVipm1QyPERO+as9dLKAX1Qc/9wNkBXPb+NfPxgsdcxuEfZcCirlYOFj3lTL3fx8pno4A==",
+      "path": "microsoft.kiota.serialization.form/1.0.0-rc.4",
+      "hashPath": "microsoft.kiota.serialization.form.1.0.0-rc.4.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Json/1.0.0-rc.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-53/vdQCvCCk/1/KXQQ6495NQY5+PPs+J803npjXtZbh36R81p152aN749v7i198GlV6TUJDk7j8sCZg1opWT7w==",
+      "path": "microsoft.kiota.serialization.json/1.0.0-rc.3",
+      "hashPath": "microsoft.kiota.serialization.json.1.0.0-rc.3.nupkg.sha512"
+    },
+    "Microsoft.Kiota.Serialization.Text/1.0.0-rc.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-QQAR/dpb/Rg8xYkuVoUnx4HYyoMukQe+OaeWZ06NjuGXKgNyKtFziqpngIOv/RYNpmf1aeRSo5gW7M34AJ54oQ==",
+      "path": "microsoft.kiota.serialization.text/1.0.0-rc.3",
+      "hashPath": "microsoft.kiota.serialization.text.1.0.0-rc.3.nupkg.sha512"
+    },
+    "System.Diagnostics.DiagnosticSource/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9W0ewWDuAyDqS2PigdTxk6jDKonfgscY/hP8hm7VpxYhNHZHKvZTdRckberlFk3VnCmr3xBUyMBut12Q+T2aOw==",
+      "path": "system.diagnostics.diagnosticsource/7.0.0",
+      "hashPath": "system.diagnostics.diagnosticsource.7.0.0.nupkg.sha512"
+    },
+    "System.Text.Encodings.Web/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OP6umVGxc0Z0MvZQBVigj4/U31Pw72ITihDWP9WiWDm+q5aoe0GaJivsfYGq53o6dxH7DcXWiCTl7+0o2CGdmg==",
+      "path": "system.text.encodings.web/7.0.0",
+      "hashPath": "system.text.encodings.web.7.0.0.nupkg.sha512"
+    },
+    "System.Text.Json/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-OtDEmCCiNl8JAduFKZ/r0Sw6XZNHwIicUYy/mXgMDGeOsZLshH37qi3oPRzFYiryVktiMoQLByMGPtRCEMYbeQ==",
+      "path": "system.text.json/7.0.1",
+      "hashPath": "system.text.json.7.0.1.nupkg.sha512"
+    },
+    "Tavis.UriTemplates/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GbetWNcPIaXvWtanHlBqlEp2KflFrsJf8RBNXmI8Yyeft9CSGxNrcsoKWEiEzyrn7gGVQ25ZC6ep9UfWPR0Otw==",
+      "path": "tavis.uritemplates/2.0.0",
+      "hashPath": "tavis.uritemplates.2.0.0.nupkg.sha512"
+    }
+  }
+}

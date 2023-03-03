@@ -1,0 +1,86 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\csharp.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\csharp.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\csharp.csproj",
+        "projectName": "csharp",
+        "projectPath": "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\csharp.csproj",
+        "packagesPath": "C:\\Users\\darrmi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\csharp\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\darrmi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "c:\\users\\darrmi\\LocalNugets": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.Kiota.Abstractions": {
+              "target": "Package",
+              "version": "[1.0.0-rc.7, )"
+            },
+            "Microsoft.Kiota.Http.HttpClientLibrary": {
+              "target": "Package",
+              "version": "[1.0.0-rc.6, )"
+            },
+            "Microsoft.Kiota.Serialization.Form": {
+              "target": "Package",
+              "version": "[1.0.0-rc.4, )"
+            },
+            "Microsoft.Kiota.Serialization.Json": {
+              "target": "Package",
+              "version": "[1.0.0-rc.3, )"
+            },
+            "Microsoft.Kiota.Serialization.Text": {
+              "target": "Package",
+              "version": "[1.0.0-rc.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200-preview.22628.1\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

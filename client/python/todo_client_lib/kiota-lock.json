@@ -1,0 +1,29 @@
+{
+  "descriptionHash": "D9F5BEB3222F5E1F2F956E09D8FD174FFAA5479C12685D033867FAC164896AD75F621E2A6521927019AD4347CCEFDF5B978F987F6CBD8E15C74278101E6F3D58",
+  "descriptionLocation": "C:\\Users\\darrmi\\src\\github\\APIPatterns\\todo-python-mongo\\client\\python\\..\\..\\spec\\openapi.yaml",
+  "lockFileVersion": "1.0.0",
+  "kiotaVersion": "0.11.1-preview",
+  "clientClassName": "TodoClient",
+  "clientNamespaceName": "todo_client_lib",
+  "language": "Python",
+  "usesBackingStore": false,
+  "includeAdditionalData": true,
+  "serializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory"
+  ],
+  "deserializers": [
+    "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
+  ],
+  "structuredMimeTypes": [
+    "application/json",
+    "text/plain",
+    "application/x-www-form-urlencoded"
+  ],
+  "includePatterns": [],
+  "excludePatterns": [],
+  "disabledValidationRules": []
+}
