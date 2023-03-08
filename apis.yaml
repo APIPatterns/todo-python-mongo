@@ -1,0 +1,24 @@
+name: Sample Todo API repository for Kiota index
+description: This is a Todo API described using a TypeSpec(fka CADL) description
+tags:
+    - application programming interface
+    - API
+    - Todo
+    - Kiota
+    - OpenApi
+created: '2023-03-08'
+specificationVersion: '0.15'
+apis:
+    - 
+        name: Sample Todo API
+        description: API for accessing a sample Todo server
+        properties:
+            - 
+                type: X-openapi
+                url: 'https://raw.githubusercontent.com/APIPatterns/todo-python-mongo/main/openapi.yaml'
+
+maintainers:
+    - 
+        FN: Darrel
+        X-mastodon: "@darrel_miller@mastodon.social"
+        email: darrel.miller@microsoft.com
